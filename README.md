@@ -50,3 +50,100 @@ Run locust
 Optionaly an actual online rest API can be tested  
 `https://petstore.swagger.io/`
 ***
+## Pytest tutorial
+### Prerequisites
+
+* Work in virtual environment
+  ```
+  python - m venv .venv
+  .venv\scripts\activate
+  ```
+  or (depending on the sytem)
+  `source .venv/bin/activate`
+* Install the requirements
+
+`pip install requirements.txt`
+
+* Install the development requirements
+
+`pip install requirements_dev.txt`
+
+## Work to do
+Run the tests
+
+`pytest tests`
+
+### 1st exercise
+Open tests\stringlib_test.py and analyse the code  
+Follow the instructions  
+Once all done check the test's coverage using this command line
+```
+pytest tests --cov=stringlib --cov-report html
+```
+Check the coverage and if needed add tests to reach 100% coverage
+### 2nd exercise
+
+Use Test Driven Development to code those requirements.  
+TDD principles:  
+1. Write the test
+2. Run the test -> it must fail
+3. Code the minimum feature to make the test pass  
+   3.1 Check the produced code is fully covered by test
+4. Move on to the next requirement
+5. At one stage refactor your code to make it simpler/nicer, to remove duplication
+
+Requirements:
+- Easy one to start : Write a function that returns "Hello world"
+- Create a calculator (a class or a module or a file) with those methods:
+  - add to compute the sum of two values 
+  - substr to compute the substraction of two values
+  - multiply to compute the multiplication of two values
+  - divide to compute the division of one value by the other  
+  - average to compute the average of a list of values 
+  
+Ask if requirements are not clear enough\
+Test happy path, limit cases and expected error cases.\
+Use parametrized test if possible\
+Compute coverage and add tests to reach 100% coverage\
+
+Once done, refactor you code to have:
+- substr calling add
+- divide calling multiply
+- average calling statistics.mean 
+
+
+## Integration tests tutorial
+### Prerequisites
+- Install postman https://www.postman.com/downloads/
+- Download swagger file from https://petstore.swagger.io/
+
+## Work to do
+Open Postman
+Import the swagger file (API definition file)
+
+Launch Find Pets By status
+Update it to test the result of the request
+In test tabs add :
+```
+pm.test("Status test", function () {
+    pm.response.to.have.status(200);
+});
+```
+
+Do the same for the Add a new pet query\
+Duplicate this query and create a negative test (wrong id) with expected 500 code as answer
+
+TODO:
+1. Get a valid pet ID using Find Pets by status and use it in Find pet by ID, add a test on 200 status
+2. Using a really big ID add a negative test on Find pet by ID and test 404 status
+3. Using Add a new pet create a well known Pet and test Find pet by ID with this ID and using the doc add a test checking the 'name' attribute
+4. Create a test suite with
+   - a test creating one Pet setting the ID as global variable and testing 200
+   - a test getting the Pet using the ID of the previous one and testing the name
+   - a test deleting the Pet using the ID and testing the result
+
+Open a runner tab, launch the full test suite and check the results  
+It can also be done without the GUI, in command line using newman, example using the docker image of newman  
+`docker run -v /mnt/d/Projects/test_training/postman:/etc/newman -t postman/newman:ubuntu run "tests.json"`
+
+
