@@ -136,7 +136,7 @@ Duplicate this query and create a negative test (wrong id) with expected 500 cod
 TODO:
 1. Get a valid pet ID using Find Pets by status and use it in Find pet by ID, add a test on 200 status
 2. Using a really big ID add a negative test on Find pet by ID and test 404 status
-3. Using Add a new pet create a well known Pet and test Find pet by ID with this ID and using the doc add a test checking the 'name' attribute
+3. Using Add a new pet create a well known Pet and test Find pet by ID with this ID and add a test checking the 'name' attribute
 4. Create a test suite with
    - a test creating one Pet setting the ID as global variable and testing 200
    - a test getting the Pet using the ID of the previous one and testing the name
@@ -145,5 +145,30 @@ TODO:
 Open a runner tab, launch the full test suite and check the results  
 It can also be done without the GUI, in command line using newman, example using the docker image of newman  
 `docker run -v /mnt/d/Projects/test_training/postman:/etc/newman -t postman/newman:ubuntu run "tests.json"`
+
+### System test or end to end (e2e) test with selenium
+#### Prerequisites:
+* install selenium libraries
+  `pip install selenium`
+* install selenium web driver https://www.selenium.dev/documentation/en/selenium_installation/installing_webdriver_binaries/
+for chrome https://sites.google.com/a/chromium.org/chromedriver/getting-started
+
+* install selenium ide https://www.selenium.dev/selenium-ide/
+
+#### Selenium test with IDE
+Launch selenium IDE and start recording a search on python.org  
+Save the test  
+Play the test
+#### Selenium test from python
+Open and run selenium_test.py  
+Demo of ide code generation
+
+Work to do:
+test on keyce-it.fr
+Check the title of the pages with the ide
+- Accueil
+- Formations
+- Contacts
+Generate python and run from python and change the code with contains
 
 
