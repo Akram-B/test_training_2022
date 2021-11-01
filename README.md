@@ -24,3 +24,29 @@ The sorting algorithm are defined in `simple/sort.py`. You can define your own a
   - array is sorted but in reversed order (11, 9, 5, 3, 1)
 - For each of those determine which algorithm is the better for 10 000 values
 
+### Integration performance tests using locust
+For the purpose of this demo we will test a simple REST API hosted locally in a docker image
+
+#### Prerequisites:
+* Docker installed https://docs.docker.com/docker-for-windows/install/
+* Check if docker is properly installed
+```
+docker run "hello-world"
+```
+* Retrieve swaggerapi/petstore docker image
+```
+docker pull swaggerapi/petstore
+```
+* Run the container and check it is correctly serving the API at http://localhost:8080
+```
+docker run -d -e SWAGGER_HOST=http://localhost -e SWAGGER_BASE_PATH=/v2 -p 8080:8080 swaggerapi/petstore
+```
+
+#### Locust
+Open locust_files\my_locust_file.py  
+Run locust  
+```locust -f locust_files/my_locust_file.py --host http://localhost:8080```
+
+Optionaly an actual online rest API can be tested  
+`https://petstore.swagger.io/`
+***
