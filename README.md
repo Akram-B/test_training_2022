@@ -1,4 +1,4 @@
-# Welcome to the Tests training  
+# Welcome to the Test training  
 ## Demos  
 ### Unit performance tests using timeit  
 For the purpose of this demo we will compare several sort algorithms using timeit
@@ -22,7 +22,7 @@ The sorting algorithm are defined in `simple/sort.py`. You can define your own a
   - array is already sorted (1, 3, 5, 9, 11)
   - array is already sorted but the min value is at the end (3, 5, 9, 11, 1)
   - array is sorted but in reversed order (11, 9, 5, 3, 1)
-- For each of those determine which algorithm is the better for 10 000 values
+- For each of those determine which algorithm is the better for 10_000 values
 
 ### Integration performance tests using locust
 For the purpose of this demo we will test a simple REST API hosted locally in a docker image
@@ -133,7 +133,7 @@ pm.test("Status test", function () {
 Do the same for the Add a new pet query\
 Duplicate this query and create a negative test (wrong id) with expected 500 code as answer
 
-TODO:
+Work to do:
 1. Get a valid pet ID using Find Pets by status and use it in Find pet by ID, add a test on 200 status
 2. Using a really big ID add a negative test on Find pet by ID and test 404 status
 3. Using Add a new pet create a well known Pet and test Find pet by ID with this ID and add a test checking the 'name' attribute
@@ -156,19 +156,21 @@ for chrome https://sites.google.com/a/chromium.org/chromedriver/getting-started
 * install selenium ide https://www.selenium.dev/selenium-ide/
 
 #### Selenium test with IDE
-Launch selenium IDE and start recording a search on python.org  
+Launch selenium IDE and start recording a search on python.org  (PEP 604)
 Save the test  
 Play the test
 #### Selenium test from python
-Open and run selenium_test.py  
+Open and run selenium_test.py \
+Doc: https://selenium-python.readthedocs.io/) \
 Demo of ide code generation
 
 Work to do:
 test on keyce-it.fr
 Check the title of the pages with the ide
 - Accueil
+- Le campus
 - Formations
 - Contacts
-Generate python and run from python and change the code with contains
+Generate python and run from python and change the code with contains (substr in str)
 
 

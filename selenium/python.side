@@ -1,0 +1,113 @@
+{
+  "id": "bb52a1f9-39b0-4a29-a4be-0525e3b338cb",
+  "version": "2.0",
+  "name": "python",
+  "url": "https://www.python.org",
+  "tests": [{
+    "id": "8718bc1e-82ce-40b7-9169-f47c75a30b9a",
+    "name": "01",
+    "commands": [{
+      "id": "3fcfc462-8c3a-4340-80bf-368f67c89fc0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e7c0165-75d2-48dd-a881-04275d7c5616",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "976x1170",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a379a47-4a00-4a90-82df-9f730148bc9a",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-search-field",
+      "targets": [
+        ["id=id-search-field", "id"],
+        ["name=q", "name"],
+        ["css=#id-search-field", "css:finder"],
+        ["xpath=//input[@id='id-search-field']", "xpath:attributes"],
+        ["xpath=//div[@id='touchnav-wrapper']/header/div/div/div/form/fieldset/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "PEP604"
+    }, {
+      "id": "179c568d-fbf5-41a4-b043-61bffdf70e71",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["name=submit", "name"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='touchnav-wrapper']/header/div/div/div/form/fieldset/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'GO')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab03283c-4a90-47fd-a6dd-8ed21a98f3df",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=PEP 604 -- Allow writing union types as X | Y",
+      "targets": [
+        ["linkText=PEP 604 -- Allow writing union types as X | Y", "linkText"],
+        ["css=h3 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'PEP 604 -- Allow writing union types as X | Y')]", "xpath:link"],
+        ["xpath=//div[@id='content']/div/section/form/ul/li/h3/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/dev/peps/pep-0604/')]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'PEP 604 -- Allow writing union types as X | Y')]", "xpath:innerText"]
+      ],
+      "value": "PEP 604 -- Allow writing union types as X | Y"
+    }, {
+      "id": "b0eec8d7-00a7-4614-af08-65489805f95f",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Welcome to Python.org",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "174e9ab1-299b-44d3-807b-39975750ee1f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=PEP 604 -- Allow writing union types as X | Y",
+      "targets": [
+        ["linkText=PEP 604 -- Allow writing union types as X | Y", "linkText"],
+        ["css=h3 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'PEP 604 -- Allow writing union types as X | Y')]", "xpath:link"],
+        ["xpath=//div[@id='content']/div/section/form/ul/li/h3/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/dev/peps/pep-0604/')]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'PEP 604 -- Allow writing union types as X | Y')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b80f6442-de90-4142-a49b-16857b3fb01c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.page-title",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='content']/div/section/article/header/h1", "xpath:idRelative"],
+        ["xpath=//header/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'PEP 604 -- Allow writing union types as X | Y')]", "xpath:innerText"]
+      ],
+      "value": "PEP 604 -- Allow writing union types as X | Y"
+    }]
+  }],
+  "suites": [{
+    "id": "adf47945-9458-4cc9-aa48-b3c29e029646",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.python.org/"],
+  "plugins": []
+}
