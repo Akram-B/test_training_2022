@@ -45,7 +45,9 @@ docker run -d -e SWAGGER_HOST=http://localhost -e SWAGGER_BASE_PATH=/v2 -p 8080:
 #### Locust
 Open locust_files\my_locust_file.py  
 Run locust  
-```locust -f locust_files/my_locust_file.py --host http://localhost:8080```
+```
+locust -f locust_files/my_locust_file.py --host http://localhost:8080
+```
 
 Optionaly an actual online rest API can be tested  
 `https://petstore.swagger.io/`
@@ -103,7 +105,7 @@ Requirements:
   
 Ask if requirements are not clear enough\
 Test happy path, limit cases and expected error cases.\
-Use parametrized test if possible\
+Use [parametrized test](https://docs.pytest.org/en/6.2.x/parametrize.html) if possible\
 Compute coverage and add tests to reach 100% coverage\
 
 Once done, refactor you code to have:
