@@ -158,9 +158,13 @@ for chrome https://sites.google.com/a/chromium.org/chromedriver/getting-started
 * install selenium ide https://www.selenium.dev/selenium-ide/
 
 #### Selenium test with IDE
-Launch selenium IDE and start recording a search on python.org  (PEP 604)
+Launch selenium IDE and start recording  
+- a search on python.org  (PEP604)
+- click on the result
+- assert on page title (right mouse click on page)
 Save the test  
 Play the test
+Export the test as python pytest
 #### Selenium test from python
 Open and run selenium_test.py \
 Doc: https://selenium-python.readthedocs.io/) \
@@ -169,10 +173,9 @@ Demo of ide code generation
 Work to do:
 test on keyce-it.fr
 Check the title of the pages with the ide
-- Accueil
-- Le campus
-- Formations
-- Contacts
+- documentation
+- alternance
+- entreprise
 Generate python and run from python and change the code with contains (substr in str)
 
 
