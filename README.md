@@ -165,9 +165,9 @@ for chrome https://sites.google.com/a/chromium.org/chromedriver/getting-started
 Launch selenium IDE and start recording  
 - a search on python.org  (PEP604)
 - click on the result
-- assert on page title (right mouse click on page)
-Save the test  
-Play the test
+- assert on page title (right mouse click on page)  
+Save the test   
+Play the test  
 Export the test as python pytest
 #### Selenium test from python
 Open and run selenium_test.py \
@@ -179,7 +179,8 @@ test on keyce-it.fr
 Check the title of the pages with the ide
 - documentation
 - alternance
-- entreprise
+- entreprise  
+You might need to add some pause before checking the page title (pause command with time to wait expressed in ms in target field)  
 Generate python and run from python and change the code with contains (substr in str)
 
 
