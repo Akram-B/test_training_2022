@@ -19,9 +19,11 @@ The sorting algorithm are defined in `simple/sort.py`. You can define your own a
 
 #### Work to do
 - Define some test cases
-  - array is already sorted (1, 3, 5, 9, 11)
-  - array is already sorted but the min value is at the end (3, 5, 9, 11, 1)
-  - array is sorted but in reversed order (11, 9, 5, 3, 1)
+  - random array
+  - array is already sorted (for instance 1, 3, 5, 9, 11, ...)
+  - array is already sorted but the min value is at the end (for instance 3, 5, 9, 11, ..., 1)
+  - array is sorted but in reversed order (for instance 11, 9, 5, 3, ..., 1)
+  - array is sorted but in reversed order and the max value is at the end (for instance 11, 9, 5, 3, 1, ..., 25)
 - For each of those determine which algorithm is the better for 10_000 values
 
 ### Integration performance tests using locust
