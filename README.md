@@ -75,7 +75,7 @@ Optionaly an actual online rest API can be tested
 ## Work to do
 Run the tests
 
-`pytest tests`
+`pytest tests --verbose`
 
 ### 1st exercise
 Open tests\stringlib_test.py and analyse the code  
