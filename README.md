@@ -146,7 +146,9 @@ Work to do:
 
 Open a runner tab, launch the full test suite and check the results  
 It can also be done without the GUI, in command line using newman, example using the docker image of newman  
-`docker run -v /mnt/d/Projects/test_training/postman:/etc/newman -t postman/newman:ubuntu run "tests.json"`
+```
+docker run -v /mnt/d/Projects/test_training/postman:/etc/newman -t postman/newman:ubuntu run "tests.json"
+```
 
 ### System test or end to end (e2e) test with selenium
 #### Prerequisites:
