@@ -156,14 +156,14 @@ docker run -v /mnt/d/Projects/test_training/postman:/etc/newman -t postman/newma
 #### Prerequisites:
 * install selenium libraries
   `pip install selenium`
-* install selenium web driver https://www.selenium.dev/documentation/en/selenium_installation/installing_webdriver_binaries/
-for chrome https://sites.google.com/a/chromium.org/chromedriver/getting-started
+* install selenium web driver https://www.selenium.dev/documentation/webdriver/drivers/
+for chrome https://sites.google.com/chromium.org/driver/?pli=1
 
 * install selenium ide https://www.selenium.dev/selenium-ide/
 
 #### Selenium test with IDE
 Launch selenium IDE and start recording  
-- a search on python.org  (PEP604)
+- a search on https://duckduckgo.com/  (keyce it)
 - click on the result
 - assert on page title (right mouse click on page)  
 Save the test   
@@ -175,12 +175,10 @@ Doc: https://selenium-python.readthedocs.io/) \
 Demo of ide code generation
 
 Work to do:
-test on keyce-it.fr
+test on the page of your choice
 Check the title of the pages with the ide
-- documentation
-- alternance
-- entreprise  
+Check for result after search
 You might need to add some pause before checking the page title (pause command with time to wait expressed in ms in target field)  
-Generate python and run from python and change the code with contains (substr in str)
+Generate python and run from python
 
 
