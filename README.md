@@ -1,4 +1,7 @@
 # Welcome to the Test training  
+## Links
+CFTL Syllabus (French version of the ISTQB syllabus)  
+https://www.cftl.fr/wp-content/uploads/2023/06/ISTQB_CTFL_Syllabus-v4.0_FR_1.0.pdf
 ## Demos  
 ### Unit performance tests using timeit  
 For the purpose of this demo we will compare several sort algorithms using timeit
