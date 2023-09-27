@@ -1,4 +1,6 @@
 # inspired by https://realpython.com/sorting-algorithms-python/#pythons-built-in-sorting-algorithm
+import timeit
+import random
 
 
 def insertion_sort(array):
@@ -148,3 +150,71 @@ def quicksort(array):
     # The final result combines the sorted `low` list
     # with the `same` list and the sorted `high` list
     return quicksort(low) + same + quicksort(high)
+
+
+def generate_random_array(size):
+    return [random.randint(1, 10_000) for _ in range(size)]
+
+
+def generate_sorted_array(size):
+    return list(range(1, size + 1))
+
+
+def generate_sorted_array_with_min_at_end(size):
+    return list(range(2, size + 1)) + [1]
+
+
+def generate_reversed_sorted_array(size):
+    return list(range(size, 0, -1))
+
+
+def generate_reversed_sorted_array_with_max_at_end(size):
+    return list(range(size - 1, 0, -1)) + [size]
+
+
+def measure_performance(test_case, sorting_algorithm):
+    time_taken = timeit.timeit(lambda: sorting_algorithm(test_case.copy()), number=1)
+    return time_taken
+
+
+# Define the size of the arrays
+array_size = 10_000
+
+# Generate test cases
+random_array = generate_random_array(array_size)
+sorted_array = generate_sorted_array(array_size)
+sorted_array_with_min_at_end = generate_sorted_array_with_min_at_end(array_size)
+reversed_sorted_array = generate_reversed_sorted_array(array_size)
+reversed_sorted_array_with_max_at_end = generate_reversed_sorted_array_with_max_at_end(array_size)
+
+sorting_algorithms = [quicksort, merge_sort, bubble_sort, insertion_sort, list.sort]
+
+# Generate test cases
+test_cases = {
+    "Random Array": generate_random_array(array_size),
+    "Sorted Array": generate_sorted_array(array_size),
+    "Sorted Array with Min at End": generate_sorted_array_with_min_at_end(array_size),
+    "Reversed Sorted Array": generate_reversed_sorted_array(array_size),
+    "Reversed Sorted Array with Max at End": generate_reversed_sorted_array_with_max_at_end(array_size)
+}
+
+# Dictionary to store the best algorithm for each test case
+best_algorithms = {test_case_name: None for test_case_name in test_cases}
+
+# Measure performance for each test case and each algorithm
+for algorithm in sorting_algorithms:
+    print(f"Performance for {algorithm.__name__}:")
+    for test_case_name, test_case in test_cases.items():
+        execution_time = measure_performance(test_case, algorithm)
+        print(f"{test_case_name} Sorting Time: {execution_time:.6f} seconds")
+
+        # Update the best algorithm for each test case
+        if best_algorithms[test_case_name] is None or execution_time < best_algorithms[test_case_name][1]:
+            best_algorithms[test_case_name] = (algorithm.__name__, execution_time)
+
+    print()  # Separate results for different algorithms
+
+# Print the best algorithm for each test case
+print("Best Algorithms:")
+for test_case_name, (best_algorithm, best_time) in best_algorithms.items():
+    print(f"{test_case_name}: {best_algorithm} (Time: {best_time:.6f} seconds)")
