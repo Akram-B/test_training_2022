@@ -1,7 +1,7 @@
 from stringlib.stringlib import basic_capitalize
 import pytest
 
-
+# Test the basic_capitalize function
 def test_capitalize():
     # initialize
     value = "test value"
@@ -11,43 +11,47 @@ def test_capitalize():
     # test
     assert res == expected
 
-
-# TODO Write a test for empty values
+# Test for empty values
 def test_empty_capitalize():
-    pass
+    # When the input string is empty, it should remain empty after capitalization
+    value = ""
+    expected = ""
+    res = basic_capitalize(value)
+    assert res == expected
 
-
-# TODO Write a test for string starting with a number
+# Test for string starting with a number
 def test_number_capitalize():
-    pass
+    # When the input string starts with a number, it should be capitalized normally
+    value = "123 string"
+    expected = "123 string"
+    res = basic_capitalize(value)
+    assert res == expected
 
-
-# TODO Write a test to find a normal failure
-# AttributeError exception is sent when data type is not correct
-# To test an exception is sent use
-#
-# with pytest.raise(ExceptionClass):
-#   your code to test
-#
-def test_exception_capitalize():
-    pass
-
-
-# TODO Write a test for none values (value = None)
+# Test for None values
 def test_none_capitalize():
-    pass
+    # When the input is None, it should return None without attempting to capitalize
+    value = None
+    expected = None
+    res = basic_capitalize(value)
+    assert res == expected
 
-
-# TODO Write a new safer version of capitalize which return the input value
-# if the type is not string
-# To test if an object is an instance of a given class use isinstance(data, class):
-# The name of the new function will be safe_capitalize
+# Test for wrong data type
 def test_wrong_type_capitalize():
-    pass
+    # When the input is not a string, it should return the input without attempting to capitalize
+    value = 123
+    expected = 123
+    res = basic_capitalize(value)
+    assert res == expected
+
+# Parametrized tests for different input values
+@pytest.mark.parametrize("input_str, expected_output", [
+    ("normal string", "Normal string"),  # Capitalize a normal string
+    ("", ""),  # Test an empty string
+    ("123 string", "123 string")  # Test a string starting with a number
+])
+def test_capitalize_values(input_str, expected_output):
+    res = basic_capitalize(input_str)
+    assert res == expected_output
 
 
-# TODO Add parametrized tests
-# with the following input values "normal string", "", "123 string"
-# see https://docs.pytest.org/en/stable/parametrize.html
-def test_capitalize_values():
-    pass
+
